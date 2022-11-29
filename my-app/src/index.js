@@ -3,15 +3,25 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import HelloComponentExternal from './components/TestComponent';
 
+//การสร้าง Component แบบ functional programming
+function HelloComponent(){
+  return <h2>Hello Component!</h2>
+}
 
+// HelloReact = () =>{
+//   return "Hello React!"
+// } 
+
+class HelloNewComponent extends React.Component {
+  render(){
+    return <h2>HelloMyFirstComponent!</h2>
+  }
+}
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(data,
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+root.render(<App/>);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

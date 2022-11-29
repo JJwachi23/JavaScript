@@ -1,26 +1,24 @@
-import React, {Component} from "react";
 import logo from './logo.svg';
 import './App.css';
-import User from "./user/User";
+import React from 'react';
+import Transaction from './components/Transaction';
 
-class App extends Component {
-  state = {
-    name: "React-Chat-Application"
-  }
 
-  onNameChange = name => {
-    this.setState({ name: name });
-  }
 
-  render() {
+const Title = () => <h2>โปรแกรมบัญชีรายรับ-รายจ่าย</h2>
 
-    const {name} = this.state
+// const Description = () => <p>บันทึกข้อมูลบัญชีในแต่ละวันของคุณ</p>
 
-    return <div className="App"> Hello {name}
-    <User name={name} onNameChange={this.onNameChange}/>
-    </div>;
-  
-  }
+const Design = {color: 'red', textAlign: 'center', fontSize: '1.5rem' };
+
+
+function App() {
+  return (
+    <div className='container'>
+      <h2 style={Design}>โปรแกรมบัญชีรายรับ-รายจ่าย</h2>
+      <Transaction/>
+    </div>
+  );
 }
 
-export default App; 
+export default App;
