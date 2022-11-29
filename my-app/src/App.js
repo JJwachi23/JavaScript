@@ -11,7 +11,6 @@ const Title = () => <h2>โปรแกรมบัญชีรายรับ-�
 
 const Design = {color: 'red', textAlign: 'center', fontSize: '1.5rem' };
 
-
 function App() {
   return (
     <div className='container'>
