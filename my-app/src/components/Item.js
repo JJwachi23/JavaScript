@@ -9,8 +9,8 @@ const Item = ({title, amount}) => {
   }
 
   Item.propTypes= {
-    title:PropTypes.string,
-    amount:PropTypes.number
+    title:PropTypes.string.isRequired,
+    amount:PropTypes.number.isRequired
   }
 
 
