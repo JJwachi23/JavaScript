@@ -1,11 +1,23 @@
-const Item = () => {
+import PropTypes from 'prop-types'; //ES6
 
-    const Name = "ที่พักโรงแรม"
-    const Amount = 5000;
+const Item = ({title, amount}) => {
 
+  // const {title, amount} = props
     return(
-      <li className='item'>{Name}<span> {Amount}</span></li>
+      <li>{title}<span> -{amount}</span></li>
     );
   }
 
+  Item.propTypes= {
+    title:PropTypes.string,
+    amount:PropTypes.number
+  }
+
+
+
+
+
+
+
+     
   export default Item
