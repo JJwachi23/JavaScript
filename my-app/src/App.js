@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import React from 'react';
 import Transaction from './components/Transaction';
+import FormComponent from './components/FormComponent';
 
 
 
@@ -15,6 +16,7 @@ function App() {
   return (
     <div className='container'>
       <h2 style={Design}>Application <br/>Income & Expenses Account </h2>
+      <FormComponent></FormComponent>
       <Transaction/>
     </div>
   );

@@ -15,9 +15,4 @@ const Item = ({title, amount}) => {
 
 
 
-
-
-
-
-     
   export default Item
