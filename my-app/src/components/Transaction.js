@@ -2,25 +2,27 @@ import Item from './Item';
 import './Transaction.css'
 import { v4 as uuidv4 } from 'uuid';
 
-const Transaction = () => {
-  const data = [
-    {title: "เงินเดือน", amount: 25000},
-    {title: "ค่ารักษาพยาบาล", amount: 2500},
-    {title: "ค่าเช่าบ้าน", amount: 2000},
-    {title: "ค่าน้ำมัน", amount: 1500},
-    {title: "ค่าประกัน", amount: 900},
-    {title: "ค่าเดินทาง", amount: 600}
+const Transaction = (props) => {
+    const {items} = props;
 
-  ]; 
+  // const data = [
+  //   {title: "เงินเดือน", amount: 25000},
+  //   {title: "ค่ารักษาพยาบาล", amount: 2500},
+  //   {title: "ค่าเช่าบ้าน", amount: 2000},
+  //   {title: "ค่าน้ำมัน", amount: 1500},
+  //   {title: "ค่าประกัน", amount: 900},
+  //   {title: "ค่าเดินทาง", amount: 600}
+
+  // ]; 
     return(
     <ul className='item-list'>
       {/* <Item title="ค่ารักษาพยาบาล" amount="2000"/> */}
 
       {/* <Item title={data[0].title} amount={data[0].amount}/> */}
-      {data.map((element)=> {
+      {items.map((element)=> {
 
         // return <Item title={element.title} amount={element.amount}/>
-        return <Item title = {element.title} amount = {element.amount}key={uuidv4()}/>
+        return <Item title = {element.title} amount = {element.amount} key={element.id}/>
       })}
 
       {/* <Item title={data[1].title} amount={data[1].amount}/>
