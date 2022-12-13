@@ -5,8 +5,6 @@ const FormComponent = () => {
     const [title,setTitle] = useState('')
     const [amount,setAmount] = useState(0)
 
-
-    
     const inputTitle = (event) => {
         setTitle(event.target.value);
         // console.log(event.target.value);
