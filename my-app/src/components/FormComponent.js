@@ -1,7 +1,10 @@
 import { useState } from 'react';
 import './FormComponent.css'
+import { v4 as uuidv4 } from 'uuid';
 
-const FormComponent = () => {
+const FormComponent = (props) => {
+
+
     const [title,setTitle] = useState('')
     const [amount,setAmount] = useState(0)
 
@@ -18,10 +21,11 @@ const FormComponent = () => {
     const saveItem = (event) => {
         event.preventDefault()
         const itemData = {
+            id: uuidv4(),
             title: title,
             amount: Number(amount)
         }
-        console.log(itemData);
+        props.onAddItem(itemData);
         setTitle('');
         setAmount(0);
         // console.log('ข้อมูลของคุณถูกบันทึกเรียบร้อยแล้ว!');
