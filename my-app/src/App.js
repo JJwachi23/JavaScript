@@ -12,16 +12,13 @@ import { useState } from 'react';
 function App() {
 
 const Design = {color: 'red', textAlign: 'center', fontSize: '1.5rem' };
-const initData = [
-  {id:1, title: "เงินเดือน", amount: 25000},
-  {id:2, title: "ค่ารักษาพยาบาล", amount: 2500},
-  {id:3, title: "ค่าเช่าบ้าน", amount: 2000},
-  {id:4, title: "ค่าน้ำมัน", amount: 1500},
-  {id:5, title: "ค่าประกัน", amount: 900},
-  {id:6, title: "ค่าเดินทาง", amount: 600}
-]; 
+// const initData = [
+//   {id:1, title: "เงินเดือน", amount: 25000},
+//   {id:2, title: "ค่ารักษาพยาบาล", amount: 2500},
+//   {id:3, title: "ค่าเช่าบ้าน", amount: 2000},
+// ]; 
 
-const [items,setItems] = useState(initData);
+const [items,setItems] = useState([]);
 
 const onAddNewItem = (newItem) => {
   setItems ((prevItem) =>{
