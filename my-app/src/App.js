@@ -2,9 +2,11 @@ import logo from './logo.svg';
 import './App.css';
 import React from 'react';
 import Transaction from './components/Transaction';
+
 import FormComponent from './components/FormComponent';
 import Item from './components/Item';
 import { useState } from 'react';
+import DataContext from './components/Data/DataContext';
 
 // const Title = () => <h2>โปรแกรมบัญชีรายรับ-รายจ่าย</h2>
 
@@ -28,11 +30,13 @@ const onAddNewItem = (newItem) => {
 }
 
   return (
-    <div className='container'>
-      <h2 style={Design}>Application <br/>Income & Expenses Account </h2>
-      <FormComponent onAddItem={onAddNewItem}/>
-      <Transaction items = {items}/>
-    </div>
+    <DataContext.Provider value={"Wachirawit"}>
+      <div className='container'>
+        <h2 style={Design}>Application <br/>Income & Expenses Account </h2>
+        <FormComponent onAddItem={onAddNewItem}/>
+        <Transaction items = {items}/>
+      </div>
+    </DataContext.Provider>
   );
 }
 
