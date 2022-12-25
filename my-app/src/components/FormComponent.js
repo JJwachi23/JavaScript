@@ -34,7 +34,7 @@ const FormComponent = (props) => {
     } 
 
     useEffect(()=>{
-        const checkData = title.trim().length >=0 && amount!==0;
+        const checkData = title.trim().length >0 && amount!==0;
         setFormValid(checkData);
     },[title, amount]);
 
@@ -43,14 +43,14 @@ const FormComponent = (props) => {
             <form onSubmit={saveItem}>
                 <div className="form-control">
                     <label>ชื่อรายการ</label>
-                    <input type="text" placeholder="ระบุรายการของคุณ" onChange={inputTitle} value={title}></input>
+                    <input type="text" placeholder="ระบุรายการของคุณ" onChange={inputTitle} value={title} ></input>
                 </div>
                 <div className="form-control">
                     <label>จำนวนเงิน</label>
-                    <input type="number" placeholder="(+ รายรับ, - รายจ่าย)" onChange={inputAmount} value={amount}></input>
+                    <input type="number" placeholder="(+ รายรับ, - รายจ่าย)" onChange={inputAmount} value={amount} ></input>
                 </div>
                 <div>
-                    <button className="btn" type="submit" disabled= {!formValid}>เพิ่มข้อมูล</button>
+                    <button className="btn" type="submit" disabled= {!formValid}title="เพิ่มข้อมูล">เพิ่มข้อมูล</button>
                 </div>
             </form>
         </div>

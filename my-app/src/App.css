@@ -21,5 +21,13 @@ body {
   margin: 30px auto;
   width: 350px;
  }
-
  
+ .btn-report {
+  width: 45%;
+  background-color: #ff6347;
+  margin: 5px;
+  dispaly: inline;
+  color: #f7f7f7;
+  border: solid 1px gray;
+  border-radius: 3px;
+ }
