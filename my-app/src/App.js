@@ -1,14 +1,14 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 
 import Transaction from './components/Transaction';
 import FormComponent from './components/FormComponent';
-import Item from './components/Item';
+// import Item from './components/Item';
 import ReportComponent from './components/ReportComponent';
 
-import { useState, useEffect, useReducer } from 'react';
+import { useState,useEffect } from 'react';
 import DataContext from './components/Data/DataContext';
-
+import { BrowserRouter as Router, Link } from 'react-router-dom';
 
 function App() {
   const Design = {color: 'red', textAlign: 'center', fontSize: '1.5rem' };
@@ -17,6 +17,8 @@ function App() {
 
   const [reportIncome, setReportIncome] = useState(0);
   const [reportExpense, setReportExpense] = useState(0);
+
+
 
   const onAddNewItem = (newItem) => {
     setItems ((prevItem) =>{
@@ -37,34 +39,28 @@ setReportExpense(Expense);
 }, [items, reportIncome, reportExpense]);
 
 
-//Reducer State
-  const [showReport,setShowReport] = useState(false);
-  const reducer = (state, action) => {
-    switch(action.type){
-      case "SHOW" :
-        return setShowReport(true);
-      case "HIDE" :
-        return setShowReport(false);
-    }
-  }
 
-  const [result, dispatch] = useReducer(reducer, showReport)
 
   return (
-    <DataContext.Provider value={
-      {
-        Income: reportIncome,
-        Expense: reportExpense
-      }
-    }>
+    <DataContext.Provider value={{Income: reportIncome, Expense: reportExpense}}>
       <div className='container'>
         <h2 style={Design}>Application <br/>Income & Expenses Account </h2>
-        {showReport && <ReportComponent/>} {/*เป็นการเขียนอธิบายว่าการที่จะแสดง ReportComponent ต้องอ้างอิง showReport State เท่านั้น*/}
+      <Router>
+            <div>
+              <ul className='holizontal-menu'>
+                <li>
+                  <Link to='/'>Home Page</Link>
+                </li>
+                <li>
+                  <Link to='/'>About</Link>
+                </li>
+              </ul>
+            </div>
+          </Router>
+
+        <ReportComponent/>
         <FormComponent onAddItem={onAddNewItem}/>
         <Transaction items = {items}/>
-        <h2>{result}</h2>
-        <button className='btn-report' onClick={() => dispatch({type:"SHOW"})}>แสดง</button>
-        <button className='btn-report' onClick={() => dispatch({type:"HIDE"})}>ซ่อน</button>
       </div>
     </DataContext.Provider>
   );
