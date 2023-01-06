@@ -1,4 +1,4 @@
-// import logo from './logo.svg';
+import logo from './logo.svg';
 import './App.css';
 
 import Transaction from './components/Transaction';
@@ -8,7 +8,8 @@ import ReportComponent from './components/ReportComponent';
 
 import { useState,useEffect } from 'react';
 import DataContext from './components/Data/DataContext';
-import { BrowserRouter as Router, Link } from 'react-router-dom';
+
+
 
 function App() {
   const Design = {color: 'red', textAlign: 'center', fontSize: '1.5rem' };
@@ -45,19 +46,6 @@ setReportExpense(Expense);
     <DataContext.Provider value={{Income: reportIncome, Expense: reportExpense}}>
       <div className='container'>
         <h2 style={Design}>Application <br/>Income & Expenses Account </h2>
-      <Router>
-            <div>
-              <ul className='holizontal-menu'>
-                <li>
-                  <Link to='/'>Home Page</Link>
-                </li>
-                <li>
-                  <Link to='/'>About</Link>
-                </li>
-              </ul>
-            </div>
-          </Router>
-
         <ReportComponent/>
         <FormComponent onAddItem={onAddNewItem}/>
         <Transaction items = {items}/>
